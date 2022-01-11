@@ -75,7 +75,14 @@ class App extends React.Component {
 
     this.setState({
       // grocery: grocerylist gets risd of all the new additions
-      grocery: [this.state.grocery.shift(this.state.grocery[2])],
+      grocery: groceryList,
+      value: "",
+      item: "item name here",
+      brand: "",
+      units: "units",
+      quantity: "0",
+      isPurchased: false,
+
       ///resets input
     }),
       console.log(this.state);
