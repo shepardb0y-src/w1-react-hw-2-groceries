@@ -68,8 +68,19 @@ class App extends React.Component {
       quantity: "0",
       isPurchased: true,
     });
-    console.table(this.state.grocery);
   };
+
+  handleclick = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      // grocery: grocerylist gets risd of all the new additions
+      grocery: [this.state.grocery.pop(this.state.grocery)],
+      ///resets input
+    }),
+      console.log(this.state);
+  };
+
   render() {
     console.log(this.state.value);
     return (
@@ -107,6 +118,7 @@ class App extends React.Component {
             onChange={this.handleChange}
           />
           <input type="submit"></input>
+          <button onClick={this.handleclick}>Remove</button>
         </form>
         <div>
           <h3>Preview Products</h3>
